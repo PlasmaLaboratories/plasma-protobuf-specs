@@ -82,7 +82,6 @@ async function generateExports () {
 
 async function generateIndexFile (outputDir: string) {
   const indexContent = `
-  ***
 export * from './plasma_protobuf';
 export * as google from './google_protobuf';
   `.trim()
