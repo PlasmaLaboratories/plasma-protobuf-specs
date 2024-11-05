@@ -86,6 +86,14 @@ Add Sonatype to the resolvers list in build.sbt. It should look like this:
         path: /path/to/protobuf-specs/build/dart
     ```
 
+###  Typescript
+
+We're using [Protobuf-es](https://github.com/bufbuild/protobuf-es) for generation as it's fully-compliant
+
+1. `cd build/ts`
+2. `npm install @bufbuild/protobuf @bufbuild/protoc-gen-es @bufbuild/buf`
+3. `npx buf generate`
+
 ## Usages
 See related projects 
 

@@ -10,3 +10,6 @@ target/
 project/
 .bloop/
 .direnv/
+/build/ts/dist
+/build/ts/node_modules
+/build/ts/proto
