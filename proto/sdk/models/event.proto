@@ -47,9 +47,10 @@ message Event {
   message IoTransaction {
     //the range of acceptable slots the transaction can be accepted into
     org.plasmalabs.sdk.models.transaction.Schedule schedule = 1 [(validate.rules).message.required = true];
+    // Metadata
     quivr.models.SmallData metadata = 2 [(validate.rules).message.required = true];
     // Polices and asset statements
-    Policies policies = 3;
+    Policies policies = 3; [(validate.rules).message.required = true];
 
     message Policies {
       // 0-to-many list of group Policy
