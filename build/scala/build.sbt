@@ -4,7 +4,7 @@ val scala3 = "3.4.1"
 inThisBuild(
   List(
     organization := "org.plasmalabs",
-    scalaVersion := scala213
+    scalaVersion := scala3
   )
 )
 
