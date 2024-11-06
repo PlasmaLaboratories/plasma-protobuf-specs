@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package quivr.models;
+package org.plasmalabs.quivr.models;
 
 import "validate/validate.proto";
 

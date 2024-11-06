@@ -8,7 +8,7 @@ package org.plasmalabs.indexer.services;
 
 import 'sdk/models/address.proto';
 import 'sdk/models/identifier.proto';
-import 'sdk/models/event.proto';
+import 'sdk/models/policies_statements/policy.proto';
 import 'consensus/models/block_id.proto';
 import 'indexer/indexer_models.proto';
 import 'google/protobuf/wrappers.proto';
@@ -220,7 +220,7 @@ message QueryByGroupIdRequest {
 }
 
 message GroupPolicyResponse {
-  sdk.models.Event.GroupPolicy groupPolicy = 1;
+  org.plasmalabs.sdk.models.GroupPolicy groupPolicy = 1;
 }
 
 // Used to request a series policy associated by seriesId
@@ -230,7 +230,7 @@ message QueryBySeriesIdRequest {
 }
 
 message SeriesPolicyResponse {
-  sdk.models.Event.SeriesPolicy seriesPolicy = 1;
+  org.plasmalabs.sdk.models.SeriesPolicy seriesPolicy = 1;
 }
 
 // Definitions of existing database indexes.
