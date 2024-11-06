@@ -23,8 +23,6 @@ message Event {
     Header header = 4;
     //IO Transaction
     IoTransaction ioTransaction = 5;
-    // Polices and asset statements
-    Policies policies = 6;
   }
 
   message Eon {
@@ -49,19 +47,21 @@ message Event {
   message IoTransaction {
     //the range of acceptable slots the transaction can be accepted into
     org.plasmalabs.sdk.models.transaction.Schedule schedule = 1 [(validate.rules).message.required = true];
-    quivr.models.SmallData metadata = 4 [(validate.rules).message.required = true];
-  }
+    quivr.models.SmallData metadata = 2 [(validate.rules).message.required = true];
+    // Polices and asset statements
+    Policies policies = 3;
 
-  message Policies {
-    // 0-to-many list of group Policy
-    repeated org.plasmalabs.sdk.models.GroupPolicy groupPolicies = 1;
-    // 0-to-many list of seriesPolicy
-    repeated org.plasmalabs.sdk.models.SeriesPolicy seriesPolicies = 2;
-    // 0-to-many list of minting asset statements
-    repeated org.plasmalabs.sdk.models.AssetMintingStatement mintingStatements = 3;
-    // 0-to-many list of merging asset statements
-    repeated org.plasmalabs.sdk.models.AssetMergingStatement mergingStatements = 4;
-    // 0-to-many list of splitting asset statements
-    repeated org.plasmalabs.sdk.models.AssetSplittingStatement splittingStatements = 5;
+    message Policies {
+      // 0-to-many list of group Policy
+      repeated org.plasmalabs.sdk.models.GroupPolicy groupPolicies = 1;
+      // 0-to-many list of seriesPolicy
+      repeated org.plasmalabs.sdk.models.SeriesPolicy seriesPolicies = 2;
+      // 0-to-many list of minting asset statements
+      repeated org.plasmalabs.sdk.models.AssetMintingStatement mintingStatements = 3;
+      // 0-to-many list of merging asset statements
+      repeated org.plasmalabs.sdk.models.AssetMergingStatement mergingStatements = 4;
+      // 0-to-many list of splitting asset statements
+      repeated org.plasmalabs.sdk.models.AssetSplittingStatement splittingStatements = 5;
+    }
   }
 }
