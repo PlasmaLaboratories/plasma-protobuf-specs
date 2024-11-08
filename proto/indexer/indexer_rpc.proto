@@ -8,7 +8,7 @@ package org.plasmalabs.indexer.services;
 
 import 'sdk/models/address.proto';
 import 'sdk/models/identifier.proto';
-import 'sdk/models/policies_statements/policy.proto';
+import 'sdk/models/policies_statements/policy_statement.proto';
 import 'consensus/models/block_id.proto';
 import 'indexer/indexer_models.proto';
 import 'google/protobuf/wrappers.proto';

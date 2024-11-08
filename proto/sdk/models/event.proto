@@ -6,8 +6,7 @@ import 'validate/validate.proto';
 
 import 'quivr/models/shared.proto';
 import 'sdk/models/transaction/schedule.proto';
-import 'sdk/models/policies_statements/policy.proto';
-import 'sdk/models/policies_statements/statements.proto';
+import 'sdk/models/policies_statements/policy_statement.proto';
 
 // Events are uniquely identifiable occurrences of state mutations within the blockchain protocol.
 // Each event is associated with certain data that may be updated every tick.
@@ -49,20 +48,16 @@ message Event {
     org.plasmalabs.sdk.models.transaction.Schedule schedule = 1 [(validate.rules).message.required = true];
     // Metadata
     quivr.models.SmallData metadata = 2 [(validate.rules).message.required = true];
-    // Polices and asset statements
-    Policies policies = 3 [(validate.rules).message.required = true];
+    // 0-to-many list of group Policy
+    repeated org.plasmalabs.sdk.models.GroupPolicy groupPolicies = 3;
+    // 0-to-many list of seriesPolicy
+    repeated org.plasmalabs.sdk.models.SeriesPolicy seriesPolicies = 4;
+    // 0-to-many list of minting asset statements
+    repeated org.plasmalabs.sdk.models.AssetMintingStatement mintingStatements = 5;
+    // 0-to-many list of merging asset statements
+    repeated org.plasmalabs.sdk.models.AssetMergingStatement mergingStatements = 6;
+    // 0-to-many list of splitting asset statements
+    repeated org.plasmalabs.sdk.models.AssetSplittingStatement splittingStatements = 7;
 
-    message Policies {
-      // 0-to-many list of group Policy
-      repeated org.plasmalabs.sdk.models.GroupPolicy groupPolicies = 1;
-      // 0-to-many list of seriesPolicy
-      repeated org.plasmalabs.sdk.models.SeriesPolicy seriesPolicies = 2;
-      // 0-to-many list of minting asset statements
-      repeated org.plasmalabs.sdk.models.AssetMintingStatement mintingStatements = 3;
-      // 0-to-many list of merging asset statements
-      repeated org.plasmalabs.sdk.models.AssetMergingStatement mergingStatements = 4;
-      // 0-to-many list of splitting asset statements
-      repeated org.plasmalabs.sdk.models.AssetSplittingStatement splittingStatements = 5;
-    }
   }
 }
