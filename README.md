@@ -88,11 +88,10 @@ Add Sonatype to the resolvers list in build.sbt. It should look like this:
 
 ###  Typescript
 
-We're using [Protobuf-es](https://github.com/bufbuild/protobuf-es) for generation as it's fully-compliant
+We use [Protobuf-es V1](https://github.com/bufbuild/protobuf-es/tree/v1) for generation as it's the most compliant protobuf compiler available for ts
 
 1. `cd build/ts`
-2. `npm install @bufbuild/protobuf @bufbuild/protoc-gen-es @bufbuild/buf`
-3. `npx buf generate`
+2. `sh build.sh`
 
 ## Usages
 See related projects 
