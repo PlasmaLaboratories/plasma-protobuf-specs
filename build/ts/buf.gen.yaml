@@ -4,6 +4,8 @@ inputs:
   - directory: ../../external_proto
 plugins:
   - local: protoc-gen-es
-    opt: target=ts
+    opt: 
+    - target=ts
+    - json_types=true
     out: proto
 clean: true
