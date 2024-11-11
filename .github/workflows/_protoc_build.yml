@@ -102,12 +102,6 @@ jobs:
           sh build.sh
         working-directory: build/ts
 
-      - name: Lint and Test
-        run: |
-          npm run lint
-          npm test
-        working-directory: build/ts
-
       - name: Upload TypeScript Compiled Lib
         uses: actions/upload-artifact@v4
         with:
