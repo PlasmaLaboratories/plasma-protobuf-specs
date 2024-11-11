@@ -86,6 +86,13 @@ Add Sonatype to the resolvers list in build.sbt. It should look like this:
         path: /path/to/protobuf-specs/build/dart
     ```
 
+###  Typescript
+
+We use [Protobuf-es V1](https://github.com/bufbuild/protobuf-es/tree/v1) for generation as it's the most compliant protobuf compiler available for ts
+
+1. `cd build/ts`
+2. `sh build.sh`
+
 ## Usages
 See related projects 
 

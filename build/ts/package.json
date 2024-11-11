@@ -1,0 +1,32 @@
+{
+  "name": "plasma_protobuf",
+  "version": "0.1.0",
+  "description": "A TS library that is generated according to the [Plasma Protobuf specification](https://github.com/PlasmaLaboratories/plasma-protobuf-specs)  This also includes the files required to connect over gRPC to connect to a Node to send transactions, interact with addresses and much more!",
+  "main": "dist/src/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PlasmaLaboratories/plasma-protobuf-specs.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PlasmaLaboratories/plasma-protobuf-specs/issues"
+  },
+  "homepage": "https://github.com/PlasmaLaboratories/plasma-protobuf-specs#readme",
+  "dependencies": {
+    "@bufbuild/buf": "^1.46.0",
+    "@bufbuild/protobuf": "^1.10.0",
+    "@bufbuild/protoc-gen-es": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3"
+  }
+}
