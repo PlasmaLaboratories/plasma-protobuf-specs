@@ -14,8 +14,6 @@ message Datum {
     Epoch epoch = 3;
     Header header = 4;
     IoTransaction ioTransaction = 5;
-    GroupPolicy groupPolicy = 6;
-    SeriesPolicy seriesPolicy = 7;
   }
 
   message Eon {
@@ -32,11 +30,5 @@ message Datum {
   }
   message IoTransaction {
     Event.IoTransaction event = 1 [(validate.rules).message.required = true];
-  }
-  message GroupPolicy {
-    Event.GroupPolicy event = 1 [(validate.rules).message.required = true];
-  }
-  message SeriesPolicy {
-    Event.SeriesPolicy event = 1 [(validate.rules).message.required = true];
   }
 }

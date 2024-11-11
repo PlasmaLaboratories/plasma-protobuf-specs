@@ -8,7 +8,6 @@ import 'sdk/models/datum.proto';
 import 'sdk/models/identifier.proto';
 import 'sdk/models/transaction/spent_transaction_output.proto';
 import 'sdk/models/transaction/unspent_transaction_output.proto';
-import 'sdk/models/box/assets_statements.proto';
 
 // defines a transaction
 message IoTransaction {
@@ -21,14 +20,4 @@ message IoTransaction {
   repeated UnspentTransactionOutput outputs = 2;
   // Datum
   org.plasmalabs.sdk.models.Datum.IoTransaction datum = 3 [(validate.rules).message.required = true];
-  // 0-to-many list of group Policy
-  repeated org.plasmalabs.sdk.models.Datum.GroupPolicy groupPolicies = 5;
-  // 0-to-many list of seriesPolicy
-  repeated org.plasmalabs.sdk.models.Datum.SeriesPolicy seriesPolicies = 6;
-  // 0-to-many list of minting asset statements
-  repeated org.plasmalabs.sdk.models.box.AssetMintingStatement mintingStatements = 7;
-  // 0-to-many list of merging asset statements
-  repeated org.plasmalabs.sdk.models.box.AssetMergingStatement mergingStatements = 8;
-  // 0-to-many list of splitting asset statements
-  repeated org.plasmalabs.sdk.models.box.AssetSplittingStatement splittingStatements = 9;
 }
