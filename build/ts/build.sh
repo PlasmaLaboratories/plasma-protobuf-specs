@@ -1,10 +1,13 @@
 #!/bin/sh
 
 # initialize packages
-npm install
+npm ci
+
+# Generate protos
+npx buf generate
 
 # Update package.json version based on the GitHub version tag
-node tools/update_version.js $1
+ts-node tools/update_version.ts $1
 
 # Run the TypeScript script to generate export files
 ts-node tools/generate_export_files.ts
