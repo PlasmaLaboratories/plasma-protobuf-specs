@@ -6,6 +6,9 @@ npm ci
 # Generate protos
 npx buf generate
 
+# install global ts-node runtime
+npm install -g ts-node
+
 # Update package.json version based on the GitHub version tag
 ts-node tools/update_version.ts $1
 
