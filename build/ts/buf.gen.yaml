@@ -6,6 +6,5 @@ plugins:
   - local: protoc-gen-es
     opt: 
     - target=ts
-    - json_types=true
     out: proto
 clean: true
