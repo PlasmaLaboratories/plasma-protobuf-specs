@@ -1,6 +1,6 @@
 {
   "name": "plasma_protobuf",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A TS library that is generated according to the [Plasma Protobuf specification](https://github.com/PlasmaLaboratories/plasma-protobuf-specs)  This also includes the files required to connect over gRPC to connect to a Node to send transactions, interact with addresses and much more!",
   "main": "dist/src/index.js",
   "module": "dist/index.mjs",
