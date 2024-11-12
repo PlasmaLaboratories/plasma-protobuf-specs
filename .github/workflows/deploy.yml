@@ -48,3 +48,35 @@ jobs:
       - name: Deploy Dart (release only)
         run: dart pub publish --force
         working-directory: ./build/dart
+
+  publish-ts:
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
+    name: Publish TypeScript
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: ts-compiled-lib
+          path: build/ts
+
+      - run: npm ci
+
+      - name: Deploy TypeScript (release only)
+        run: npm publish --provenance --access public
+        working-directory: ./build/ts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
