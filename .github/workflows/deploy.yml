@@ -43,6 +43,16 @@ jobs:
         with:
           name: dart-compiled-lib
           path: build/dart/lib
+
+      - name: Set version from tag
+        run: |
+          # Extract version from git tag
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=${VERSION#v}
+          # Update pubspec.yaml version
+          sed -i "s/^version: .*/version: $VERSION/" pubspec.yaml
+        working-directory: ./build/dart
+  
       - run: dart pub get
         working-directory: ./build/dart
       - name: Deploy Dart (release only)
@@ -73,7 +83,17 @@ jobs:
           name: ts-compiled-lib
           path: build/ts
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Set version from tag
+        run: |
+          # Extract version from git tag (remove 'v' prefix if present)
+          VERSION=${GITHUB_REF#refs/tags/}
+          VERSION=${VERSION#v}
+          # Update package.json version
+          npm version $VERSION --no-git-tag-version
+        working-directory: ./build/ts
 
       - name: Deploy TypeScript (release only)
         run: npm publish --provenance --access public
