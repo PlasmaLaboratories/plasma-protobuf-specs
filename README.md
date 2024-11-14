@@ -83,3 +83,4 @@ See related projects
 - [PlasmaSdkScala](https://github.com/PlasmaLaboratories/plasma-sdk-scala)
 - [PlasmaNode](https://github.com/PlasmaLaboratories/plasma-node)
 - [PlasmaSdkDart](https://github.com/PlasmaLaboratories/plasma-sdk-dart)
+- [PlasmaSdkTS](https://github.com/PlasmaLaboratories/plasma-sdk-typescript)
