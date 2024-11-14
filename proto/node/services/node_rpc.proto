@@ -45,6 +45,9 @@ service NodeRpc {
 
   // retrieve epoch data content
   rpc FetchEpochData (FetchEpochDataReq) returns (FetchEpochDataRes);
+
+  // Retrieve canonical head id
+  rpc FetchCanonicalHeadId (FetchCanonicalHeadIdReq) returns (FetchCanonicalHeadIdRes);
 }
 
 // Request type for BroadcastTransaction
@@ -169,4 +172,14 @@ message FetchEpochDataReq {
 // Response type for FetchEpochDataRes
 message FetchEpochDataRes {
   org.plasmalabs.proto.node.EpochData epochData = 1;
+}
+
+
+// Request type for FetchCanonicalHeadIdReq
+message FetchCanonicalHeadIdReq {}
+
+// Response type for FetchCanonicalHeadIdRes
+message FetchCanonicalHeadIdRes {
+  // Block ID
+  org.plasmalabs.consensus.models.BlockId blockId = 1;
 }
